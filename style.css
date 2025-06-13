@@ -1,0 +1,564 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #dae0e6;
+}
+
+header {
+  background-color: #6a8caf;
+  color: white;
+  padding: 10px 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+#home {
+  padding: 50px;
+  background: #f0ecec;
+}
+
+table.al {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-content h1 {
+  font-size: 48px;
+  color: #222;
+  margin-bottom: 20px;
+  animation: fadeInLeft 1s ease-out forwards;
+}
+
+.home-content p {
+  font-size: 24px;
+  color: #444;
+  animation: fadeInLeft 2.3s ease-out forwards;
+}
+.portfolio-image-circle {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid #6a8caf;
+  animation: scaleFade 5s ease-in-out infinite, shadowPulse 2s ease-in-out infinite;
+}
+.portfolio-image-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Wrapper for About content */
+.about-flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  opacity: 0;
+  transform: translateY(80px);
+  animation: fadeSlideIn 1.2s forwards ease-in-out;
+  animation-delay: 0.5s;
+}
+.about h2 {
+      font-size: 32px;
+      margin-bottom: 30px;
+      color: #3e5c7a;
+      text-align: center;
+}
+
+.about-img {
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transform: scale(1);
+  animation: zoomIn 1.5s forwards ease-in-out;
+  animation-delay: 0.6s;
+}
+
+.about-img img {
+  width: 100%;
+  display: block;
+  border-radius: 20px;
+}
+
+.about-text {
+  flex: 2;
+  font-size: 18px;
+  color: #333;
+  line-height: 1.8;
+  text-align: justify;
+  animation: fadeSlideInText 1.2s forwards ease-in-out;
+  animation-delay: 1s;
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+/* Animations */
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeSlideInText {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleFade {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+@keyframes shadowPulse {
+  0%, 100% {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+  50% {
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+  }
+}
+/* Skiil Section */
+
+ .skills {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      animation: scaleFade 5s ease-in-out infinite;
+
+    }
+
+    .flip-card {
+      background-color: transparent;
+      width: 100px;
+      height: 100px;
+      perspective: 1000px;
+      animation: fadeIn 2s ease forwards;
+      opacity: 0;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      background: linear-gradient(135deg, #f0f4ff, #ffffff);
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    .flip-card-front img {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 10px;
+    }
+
+    .flip-card-front p,
+    .flip-card-back p {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0;
+      text-align: center;
+    }
+
+    .flip-card-back {
+      transform: rotateY(180deg);
+      background-color: #b0c8ed;
+      padding: 15px;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 2;
+      }
+    }
+  /* Projects */
+  .project {
+  color: #333;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.gallery {
+  overflow-x: auto;
+  width: 100%;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  gap: 30px;
+  padding: 10px;
+  list-style: none;
+  margin: 0;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  perspective: 1000px;
+  width: 180px;
+  height: 375px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.1rem;
+  padding: 9px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.card-front {
+  background-color: #6a8caf;
+}
+
+.card-back {
+  background: #333;
+  transform: rotateY(180deg);
+  flex-direction: column;
+  gap: 10PX;
+}
+
+.card-back a {
+  color: white;
+  padding: 10px 12px;
+  text-decoration: none;
+  font-size: 1rem;
+  background: #444;
+}
+
+.card-back a:hover {
+  background: #00cc00;
+}
+
+/* ✅ Video Style (Only for Card 1) */
+.card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1px;
+}
+
+/* Education */
+h2 {
+      color: #333;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .timeline {
+      position: relative;
+      margin-left: 20px;
+      border-left: 3px solid #6a8caf;
+      padding-left: 20px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    .timeline-item::before {
+      content: "🎓";
+      position: absolute;
+      left: -32px;
+      background-color: #6a8caf;
+      color: #fff;
+      border-radius: 50%;
+      padding: 7px 7px;
+      font-size: 16px;
+    }
+
+    .timeline-item h3 {
+      margin: 0;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .timeline-item span {
+      display: block;
+      font-size: 14px;
+      color: #6a8caf;
+    }
+
+    .current {
+      font-weight: bold;
+      color: #000;
+    }
+    /*  Contect me*/
+    section#contact {
+      padding: 50px 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: #6a8caf;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: 2px solid #6a8caf;
+      border-radius: 5px;
+      font-size: 16px;
+      resize: vertical;
+    }
+
+    button {
+      background-color: #6a8caf;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #557393;
+    }
+
+    .extra-links {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .extra-links a {
+      display: inline-block;
+      margin: 10px auto;
+      text-decoration: none;
+      color: #fff;
+      background-color: #6a8caf;
+      padding: 12px 24px;
+      border-radius: 5px;
+      transition: 0.3s;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .extra-links a:hover {
+      background-color: #557393;
+    }
+
+    .extra-links img {
+      vertical-align: middle;
+      margin-right: 10px;
+      height: 20px;
+      filter: invert(1);
+    }
+    /* Social icons container under resume button */
+    .social-contact {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .social-contact a {
+      margin: 0 15px;
+      display: inline-block;
+      color: #6a8caf;
+      font-size: 32px;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    .social-contact a:hover {
+      color: #3e5c7a;
+      transform: scale(1.3);
+    }
+    /* footer */
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #6d8caa;
+      color: #333;
+      font-size: 18px;
+      
+    }
+
+    
+
+    /* ✅ Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  #home {
+    padding: 30px 20px;
+  }
+
+  table.al {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-content h1 {
+    font-size: 32px;
+  }
+
+  .home-content p {
+    font-size: 15px;
+  }
+
+  .portfolio-image-circle {
+    width: 180px;
+    height: 180px;
+    margin-top: 20px;
+  }
+
+  .about-flex {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .about-text {
+    font-size: 16px;
+    transform: none;
+    opacity: 1;
+  }
+
+  .skills-container {
+    gap: 60px;
+  }
+
+  .flip-card {
+    width: 80px;
+    height: 80px;
+  }
+
+  .card {
+    width: 150px;
+    height: 280px;
+  }
+
+  .timeline {
+    margin-left: 10px;
+    padding-left: 10px;
+  }
+
+  section#contact {
+    padding: 30px 15px;
+  }
+
+  input, textarea {
+    font-size: 14px;
+  }
+
+  button {
+    padding: 10px;
+  }
+
+  .extra-links a {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  .social-contact a {
+    font-size: 24px;
+    margin: 0 10px;
+  }
+
+  footer {
+    font-size: 16px;
+  }
+}
+
